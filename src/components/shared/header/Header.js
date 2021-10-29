@@ -1,37 +1,85 @@
 import React from "react";
+import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { HashLink as Link } from "react-router-hash-link";
+import useAuth from "../../../hooks/useAuth";
+import "./header.css";
 
 const Header = () => {
+  const { handleLogout, user } = useAuth().firebaseData;
+
   const navigation = [
     { name: "Home", to: "/" },
-    { name: "Services", to: "/services" },
-    { name: "Marketplace", to: "/" },
-    { name: "Company", to: "/company" },
+    { name: "Tours", to: "/home#tours" },
+    { name: "About Us", to: "/home#about" },
+    { name: "Contact", to: "/home#contact" },
   ];
   return (
     <header>
-      <nav
-        className="relative flex items-center justify-between sm:h-10 lg:justify-start"
-        aria-label="Global"
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        fixed="top"
+        bg="light"
+        variant="light"
+        className="p-0"
       >
-        <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              to={item.to}
-              className="font-medium text-gray-500 hover:text-gray-900"
-            >
-              {item.name}
-            </Link>
-          ))}
-          <Link
-            to="login"
-            className="font-medium text-indigo-600 hover:text-indigo-500"
-          >
-            Log in
-          </Link>
-        </div>
-      </nav>
+        <Container>
+          <Navbar.Brand as={Link} to="/" className="p-0">
+            <img
+              className="w-75 img-fluid"
+              src="https://i.ibb.co/fDwGBdF/logo.png"
+              alt="logo"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="ms-auto">
+              {navigation.map((item) => (
+                <Nav.Link
+                  as={Link}
+                  to={item.to}
+                  key={item.name}
+                  className="text-dark fs-5"
+                >
+                  {item.name}
+                </Nav.Link>
+              ))}
+              {user.displayName ? (
+                <>
+                  <NavDropdown id="collasible-nav-dropdown">
+                    <NavDropdown.Item href="#action/3.1">
+                      {user.displayName}
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.2">
+                      <Button variant="danger" onClick={handleLogout}>
+                        Logout
+                      </Button>
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <Nav.Link className="p-0">
+                    <img
+                      src={
+                        user.photoURL ||
+                        "https://i.ibb.co/LkRh377/user.jpg"
+                      }
+                      alt=""
+                      className="user-image"
+                    />
+                  </Nav.Link>
+                </>
+              ) : (
+                <Nav.Link
+                  as={Link}
+                  to="/login"
+                  className="text-white fs-5 bg-success rounded"
+                >
+                  Login
+                </Nav.Link>
+              )}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </header>
   );
 };
