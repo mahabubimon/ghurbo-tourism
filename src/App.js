@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from "./components/layout/Layout";
-import Contact from "./components/pages/home/contact/Contact";
+import BookNow from "./components/pages/bookNow/BookNow";
+import Dashboard from "./components/pages/dashboard/Dashboard";
 import Home from "./components/pages/home/home/Home";
 import Login from "./components/pages/login/Login";
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
@@ -19,8 +20,11 @@ const App = () => {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <PrivateRoute path="/contact">
-              <Contact></Contact>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
+            <PrivateRoute path="/package/:id">
+              <BookNow></BookNow>
             </PrivateRoute>
             <Route path="/login">
               <Login></Login>

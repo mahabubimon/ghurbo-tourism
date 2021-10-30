@@ -9,7 +9,6 @@ import Tours from "../tours/Tours";
 const Home = () => {
   const { toursData } = useAuth();
   const { tours } = toursData;
-
   if (tours.length === 0) {
     return (
       <div className="text-center p-5">

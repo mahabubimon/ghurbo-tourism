@@ -5,10 +5,10 @@ const About = () => {
   return (
     <section id="about" className="bg-light py-5">
       <Container className="text-start">
-        <h2 className="text-center">About Ghurbo Tourism</h2>
+        <h2 className="text-center text-success">About Ghurbo Tourism</h2>
         <div className="d-lg-flex py-5">
           <div className="col-lg-6 pe-5">
-            <h3 className="py-5">
+            <h3 className="py-5 text-info">
               Ghurbo Tourism – The Tour Operators in Bangladesh
             </h3>
             <p>
@@ -38,7 +38,7 @@ const About = () => {
             />
           </div>
           <div className="col-lg-6 ps-5">
-            <h3 className="py-5">A Brief History</h3>
+            <h3 className="py-5 text-info">A Brief History</h3>
             <p>
               Deshghuri is a registered Tour Operator in Bangladesh, under the
               legal name of Swadeshi Communications. After completing high

@@ -7,7 +7,9 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const firebaseData = useFirebase();
   const toursData = useTours();
-  return <AuthContext.Provider value={{firebaseData, toursData}}>{children}</AuthContext.Provider>;
+
+  const data = { firebaseData, toursData };
+  return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
 };
 
 export default AuthProvider;

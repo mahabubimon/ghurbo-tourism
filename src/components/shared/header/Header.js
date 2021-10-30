@@ -5,7 +5,8 @@ import useAuth from "../../../hooks/useAuth";
 import "./header.css";
 
 const Header = () => {
-  const { handleLogout, user } = useAuth().firebaseData;
+  const { firebaseData } = useAuth();
+  const { handleLogout, user } = firebaseData;
 
   const navigation = [
     { name: "Home", to: "/" },
@@ -46,6 +47,13 @@ const Header = () => {
               ))}
               {user.displayName ? (
                 <>
+                  <Nav.Link
+                    as={Link}
+                    to="/dashboard"
+                    className="text-primary fs-5"
+                  >
+                    Dashboard
+                  </Nav.Link>
                   <NavDropdown id="collasible-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">
                       {user.displayName}
@@ -58,10 +66,7 @@ const Header = () => {
                   </NavDropdown>
                   <Nav.Link className="p-0">
                     <img
-                      src={
-                        user.photoURL ||
-                        "https://i.ibb.co/LkRh377/user.jpg"
-                      }
+                      src={user.photoURL || "https://i.ibb.co/LkRh377/user.jpg"}
                       alt=""
                       className="user-image"
                     />
