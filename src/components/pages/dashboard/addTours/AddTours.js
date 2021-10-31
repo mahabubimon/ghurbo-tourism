@@ -32,13 +32,16 @@ const AddTours = () => {
           {...register("name", { required: true, maxLength: 20 })}
           placeholder="Name"
         />
-        <br />
+        <br /> <br />
         <textarea {...register("description")} placeholder="Description" />{" "}
+        <br />
         <br />
         <input type="number" {...register("price")} placeholder="price" />
         <br />
+        <br />
         <input {...register("image")} placeholder="image url" /> <br />
-        <input type="submit" />
+        <br />
+        <input type="submit" className="btn btn-primary" />
       </form>
     </div>
   );

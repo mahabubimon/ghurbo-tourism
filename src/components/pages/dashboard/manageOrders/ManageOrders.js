@@ -22,14 +22,12 @@ const ManageOrders = () => {
       axios
         .delete(url)
         .then((res) => {
-          console.log(res);
-          // if (res.data.deletedCount > 0) {
-          const remainingAllOrders = allOrders.filter(
-            (order) => order._id !== id
-          );
-          console.log(res.data);
-          setAllOrders(remainingAllOrders);
-          // }
+          if (res.data.deletedCount > 0) {
+            const remainingAllOrders = allOrders.filter(
+              (order) => order._id !== id
+            );
+            setAllOrders(remainingAllOrders);
+          }
         })
         .catch((error) => {
           console.error("There was an error!", error);
@@ -55,14 +53,13 @@ const ManageOrders = () => {
             <tr key={order._id}>
               <td>{order.name}</td>
               <td>{order.email}</td>
-              <td>{order.package}</td>
+              <td>{order.title}</td>
               <td>{order.price}</td>
               <td>
                 <Dropdown>
                   <Dropdown.Toggle variant="success" id="dropdown-basic">
                     Pending
                   </Dropdown.Toggle>
-
                   <Dropdown.Menu>
                     <Dropdown.Item href="#/action-1">Pending</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">Approve</Dropdown.Item>

@@ -5,41 +5,38 @@ const Contact = () => {
   return (
     <section id="contact" className="container py-5">
       <Row>
-          <h5 className="text-center">For more Information</h5>
-          <h2 className="text-center text-success">Contact Us</h2>
+        <h5 className="text-center">For more Information</h5>
+        <h2 className="text-center text-success">Contact Us</h2>
         <div className="mb-3 col-lg-6">
           <div>
-            <label>
-              Your Name
-            </label>
+            <label>Your Name</label>
             <input
               type="text"
               className="form-control"
               placeholder="Enter Your Name"
-            /> <br />
+            />{" "}
+            <br />
           </div>
           <div>
-            <label>
-              Your Email address
-            </label>
+            <label>Your Email address</label>
             <input
               type="email"
               className="form-control"
               placeholder="name@example.com"
             />
-          </div> <br />
+          </div>{" "}
+          <br />
           <div className="mb-3">
-            <label>
-              Text Your Message:
-            </label>
+            <label>Text Your Message:</label>
             <textarea
               className="form-control"
               id="exampleFormControlTextarea1"
               placeholder="Your Message Type Here...."
               rows="6"
-            ></textarea> <br />
+            ></textarea>{" "}
+            <br />
             <Button className="bg-primary" type="submit" value="Send Message">
-            Send Message
+              Send Message
             </Button>
           </div>
         </div>

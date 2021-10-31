@@ -7,6 +7,7 @@ import MyOrders from "./myOrders/MyOrders";
 const Dashboard = () => {
   return (
     <section className="container py-5">
+      <h2 className="text-center m-5 text-info">Dashboard</h2>
       <Tab.Container id="left-tabs-example" defaultActiveKey="my-orders">
         <Row>
           <Col sm={3}>
@@ -28,7 +29,7 @@ const Dashboard = () => {
                 <MyOrders></MyOrders>
               </Tab.Pane>
               <Tab.Pane eventKey="manage-orders">
-                  <ManageOrders></ManageOrders>
+                <ManageOrders></ManageOrders>
               </Tab.Pane>
               <Tab.Pane eventKey="add-tour">
                 <AddTours></AddTours>

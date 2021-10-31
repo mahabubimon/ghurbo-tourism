@@ -1,9 +1,9 @@
 import React from "react";
 import { Spinner } from "react-bootstrap";
 import useAuth from "../../../../hooks/useAuth";
-import Contact from "../contact/Contact";
 import About from "../about/About";
 import Banner from "../banner/Banner";
+import Contact from "../contact/Contact";
 import Tours from "../tours/Tours";
 
 const Home = () => {

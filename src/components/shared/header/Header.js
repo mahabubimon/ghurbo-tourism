@@ -20,7 +20,7 @@ const Header = () => {
         collapseOnSelect
         expand="lg"
         fixed="top"
-        bg="light"
+        bg="info"
         variant="light"
         className="p-0"
       >
@@ -50,7 +50,7 @@ const Header = () => {
                   <Nav.Link
                     as={Link}
                     to="/dashboard"
-                    className="text-primary fs-5"
+                    className="text-warning fs-5"
                   >
                     Dashboard
                   </Nav.Link>

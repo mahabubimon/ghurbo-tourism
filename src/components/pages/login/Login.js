@@ -96,33 +96,30 @@ const Login = () => {
 
   return (
     <section className="row">
-      <div className="col-md-7">
+      <div className="col-lg-7">
         <img
           className="img-fluid"
           src="https://i.ibb.co/T8Z0nNp/signup.jpg"
           alt=""
         />
       </div>
-      <div className="col-md-5 py-5">
-        <h2>Please {isLogin ? "Sign-In" : "Register"}</h2>
-        <img
-          className="w-25 img-fluid"
-          src="https://i.ibb.co/fDwGBdF/logo.png"
-          alt=""
-        />
+      <div className="col-lg-5 py-5">
+        <h2>Welcome to Ghurbo</h2><br />
         <form onSubmit={handleRegistration}>
-          <h1>{isLogin ? "Sign In" : "Register"}</h1>
+          <h2>{isLogin ? "Sign In" : "Register"}</h2>
           {isLogin || (
             <input onChange={handleUserName} type="text" placeholder="Name" />
           )}
-          <br />
+          <br /> <br />
           <input onChange={handleEmail} type="email" placeholder="Email" />{" "}
+          <br />
           <br />
           <input
             onChange={handlePassword}
             type="password"
             placeholder="Password"
           />
+          <br />
           <br />
           <input type="checkbox" onClick={handleToggle} />
           Already have an account? <br />
@@ -131,7 +128,6 @@ const Login = () => {
             {isLogin ? "Sign In" : "Register"}
           </Button>
         </form>
-
         <div className="text-center">
           <h3>
             Or <br /> Sign-In with
