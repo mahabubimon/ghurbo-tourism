@@ -9,7 +9,7 @@ const Tours = () => {
   const { tours } = toursData;
 
   return (
-    <section id="tours" className="tours">
+    <section id="tours" className="tours-image">
       <Container className="text-center pt-5">
         <h2>Welcome to <span className="text-info">Ghurbo Tourism</span></h2>
         <h2 className="text-success">Our Awesome Tour Packages</h2>
